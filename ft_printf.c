@@ -14,16 +14,6 @@
 
 void	ft_putnbr_hex(long unsigned int nbr, char *base, int *cnt)
 {
-	if ((long)nbr == LONG_MIN)
-	{
-		ft_putstr_fd("8000000000000000", 1, cnt);
-		return ;
-	}
-	if (nbr < 0)
-	{
-		nbr = -nbr;
-		ft_putchar_fd('-', 1, cnt);
-	}
 	if (nbr >= ft_strlen(base))
 		ft_putnbr_hex(nbr / ft_strlen(base), base, cnt);
 	ft_putchar_fd(base[nbr % ft_strlen(base)], 1, cnt);
